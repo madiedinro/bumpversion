@@ -2,6 +2,19 @@
 
 
 
+## v0.5.10 (2017-11-22)
+
+### Bug Fixes
+- create changelog before tag ([7f99974](https://bitbucket.org/panorays/bumpversion/commits/7f99974))
+
+
+
+
+
+
+
+
+
 ## v0.5.5 (2017-11-22)
 
 
