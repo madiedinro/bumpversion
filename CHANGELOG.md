@@ -2,6 +2,19 @@
 
 
 
+## v0.5.12 (2017-11-22)
+
+### Bug Fixes
+- fixed tags issues ([7c7253e](https://bitbucket.org/panorays/bumpversion/commits/7c7253e))
+
+
+
+
+
+
+
+
+
 ## v0.5.11 (2017-11-22)
 
 
