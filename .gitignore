@@ -5,3 +5,6 @@ include/
 lib/
 .Python
 bumpversion.egg-info/
+*.pyc
+dist
+.idea
