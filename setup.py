@@ -24,6 +24,9 @@ setup(
             'bumpversion = bumpversion:main',
         ]
     },
+    install_requires=[
+        'auto_changelog==0.1.9',
+    ],
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
