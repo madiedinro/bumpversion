@@ -168,6 +168,10 @@ class Git(BaseVCS):
     def tag(cls, name):
         subprocess.check_output(["git", "tag", name])
 
+    @classmethod
+    def tag_remove(cls, name):
+        subprocess.check_output(["git", "tag", name, "-d"])
+
 
 class Mercurial(BaseVCS):
     _TEST_USABLE_COMMAND = ["hg", "root"]
@@ -941,11 +945,14 @@ def main(original_args=None, changelog_args=None):
         vcs.__name__
     ))
     print 'adding tag : {}'.format(tag_name)
+    if do_tag:
+        vcs.tag(tag_name)
     changelog = generate_changelog_for_repo(changelog_args)
     changelog_path = os.path.join(changelog_args[changelog_args.index('--repo') + 1], 'CHANGELOG.md')
     save_changelog(changelog, changelog_path)
     vcs.add_path(changelog_path)
     vcs.commit_ammend()
     if do_tag:
+        vcs.tag_remove(tag_name)
         vcs.tag(tag_name)
     print 'generating changelog'
