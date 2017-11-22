@@ -941,11 +941,11 @@ def main(original_args=None, changelog_args=None):
         vcs.__name__
     ))
     print 'adding tag : {}'.format(tag_name)
-    vcs.commit_ammend()
-    if do_tag:
-        vcs.tag(tag_name)
-    print 'generating changelog'
     changelog = generate_changelog_for_repo(changelog_args)
     changelog_path = os.path.join(changelog_args[changelog_args.index('--repo') + 1], 'CHANGELOG.md')
     save_changelog(changelog, changelog_path)
     vcs.add_path(changelog_path)
+    vcs.commit_ammend()
+    if do_tag:
+        vcs.tag(tag_name)
+    print 'generating changelog'
